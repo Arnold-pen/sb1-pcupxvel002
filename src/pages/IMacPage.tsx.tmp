@@ -1,0 +1,34 @@
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import ProductHero from '../components/product/ProductHero';
+import ProductCharts from '../components/charts/ProductCharts';
+import { iMac } from '../data/products';
+
+export default function iMacPage() {
+  return (
+    <main className="min-h-screen bg-white">
+      <ProductHero 
+        title="iMac 性能排名" 
+        titleColor="text-blue-600"
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="flex justify-end mb-8">
+          <Link
+            to="/admin"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            数据管理
+          </Link>
+        </div>
+
+        <section className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-blue-600 text-center mb-12">性能对比</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <ProductCharts products={iMac} />
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
