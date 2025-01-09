@@ -8,9 +8,17 @@ interface PerformanceBarChartProps {
   color: string;
   name: string;
   showProcessor?: boolean;
+  baselineProcessor?: string;
 }
 
-export default function PerformanceBarChart({ data, dataKey, color, name, showProcessor = false }: PerformanceBarChartProps) {
+export default function PerformanceBarChart({ 
+  data, 
+  dataKey, 
+  color, 
+  name, 
+  showProcessor = false,
+  baselineProcessor
+}: PerformanceBarChartProps) {
   if (!data || data.length === 0) {
     return (
       <div className="h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
@@ -19,9 +27,15 @@ export default function PerformanceBarChart({ data, dataKey, color, name, showPr
     );
   }
 
-  // Find M3 baseline score
-  const m3Product = data.find(p => p.processor === 'M3');
-  const baselineScore = m3Product ? m3Product[dataKey] : Math.max(...data.map(item => item[dataKey]));
+  // Find baseline score
+  const baselineProduct = baselineProcessor 
+    ? data.find(p => p.processor === baselineProcessor)
+    : data.find(p => p.processor === 'Apple M3 @ 4.1 GHz (8 CPU cores, 10 GPU cores)') ||
+      data.find(p => p.processor === 'Apple M2 @ 3.5 GHz (8 CPU cores, 10 GPU cores)');
+  
+  const baselineScore = baselineProduct 
+    ? baselineProduct[dataKey] 
+    : Math.max(...data.map(item => item[dataKey]));
 
   // Calculate percentages
   const dataWithPercentages = data.map(item => ({

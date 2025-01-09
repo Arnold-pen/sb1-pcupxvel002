@@ -7,16 +7,14 @@ import MacBookAirPage from './pages/MacBookAirPage';
 import MacMiniPage from './pages/MacMiniPage';
 import IMacPage from './pages/IMacPage';
 import AboutPage from './pages/AboutPage';
-import AdSenseVerification from './components/AdSenseVerification';
 
 export default function App() {
   return (
-    <>
-      <AdSenseVerification />
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors flex flex-col">
-        <Navigation />
-        
-        <div className="flex-grow pt-16">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors flex">
+      <Navigation />
+      
+      <div className="flex-1 md:ml-48">
+        <div className="flex-grow pt-16 md:pt-0">
           <Routes>
             <Route path="/" element={<ProcessorPage />} />
             <Route path="/macbook-pro" element={<MacBookProPage />} />
@@ -29,6 +27,6 @@ export default function App() {
 
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

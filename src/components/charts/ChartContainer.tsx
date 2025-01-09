@@ -13,9 +13,9 @@ export default function ChartContainer({ title, children, delay = 0 }: ChartCont
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 transition-colors"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 transition-colors h-full"
     >
-      <h3 className="text-xl font-semibold mb-4 text-center text-gray-800 dark:text-gray-200">
+      <h3 className="text-lg font-semibold mb-4 text-center text-gray-800 dark:text-gray-200">
         {title.split('(').map((part, index) => (
           index === 0 ? part : 
           <span key={index} className="text-sm text-gray-500 dark:text-gray-400">
@@ -23,7 +23,7 @@ export default function ChartContainer({ title, children, delay = 0 }: ChartCont
           </span>
         ))}
       </h3>
-      <div className="min-h-[540px]" style={{ height: 'calc(24px * var(--data-count, 10) + 100px)' }}>
+      <div className="min-h-[600px]" style={{ height: 'calc(28px * var(--data-count, 10) + 100px)' }}>
         {children}
       </div>
     </motion.div>

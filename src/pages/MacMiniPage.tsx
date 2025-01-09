@@ -1,8 +1,7 @@
 import { Helmet } from 'react-helmet-async';
-import ProductHero from '../components/product/ProductHero';
-import ProductCharts from '../components/charts/ProductCharts';
 import { useProducts } from '../hooks/useProducts';
 import { useTranslation } from '../hooks/useTranslation';
+import MacMiniCharts from '../components/charts/MacMiniCharts';
 
 export default function MacMiniPage() {
   const { t } = useTranslation();
@@ -32,14 +31,23 @@ export default function MacMiniPage() {
         <meta property="og:url" content="https://mac-processor-ranking.com/mac-mini" />
       </Helmet>
 
-      <ProductHero titleKey="titles.macMini" />
+      <section className="relative h-[30vh] flex items-center justify-center bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold mb-2 text-blue-600 dark:text-blue-400">
+            {t('titles.macMini')}
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            {t('common.basedOn')}
+          </p>
+        </div>
+      </section>
       
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 transition-colors">
-          <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 text-center mb-12">
+      <div className="max-w-[90rem] mx-auto px-4 py-8">
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors">
+          <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 text-center mb-8">
             {t('common.performanceComparison')}
           </h2>
-          <ProductCharts products={products} showProcessor={true} />
+          <MacMiniCharts products={products} />
         </section>
       </div>
     </main>

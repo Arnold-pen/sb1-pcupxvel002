@@ -4,12 +4,11 @@ import ChartContainer from './ChartContainer';
 import PerformanceBarChart from './PerformanceBarChart';
 import { useTranslation } from '../../hooks/useTranslation';
 
-interface ProductChartsProps {
+interface MacMiniChartsProps {
   products: Product[];
-  showProcessor?: boolean;
 }
 
-export default function ProductCharts({ products, showProcessor = true }: ProductChartsProps) {
+export default function MacMiniCharts({ products }: MacMiniChartsProps) {
   const { t } = useTranslation();
 
   if (!products || products.length === 0) {
@@ -32,23 +31,25 @@ export default function ProductCharts({ products, showProcessor = true }: Produc
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-      <ChartContainer title={String(t('charts.singleCore'))}>
+      <ChartContainer title={String(t('charts.macMiniSingleCore'))}>
         <PerformanceBarChart
           data={sortedBySingle}
           dataKey="single_core"
           color="#007AFF"
-          name={String(t('charts.singleCore'))}
-          showProcessor={showProcessor}
+          name="单核性能"
+          showProcessor={true}
+          baselineProcessor="Apple M2 @ 3.5 GHz (8 CPU cores, 10 GPU cores)"
         />
       </ChartContainer>
 
-      <ChartContainer title={String(t('charts.multiCore'))} delay={0.2}>
+      <ChartContainer title={String(t('charts.macMiniMultiCore'))} delay={0.2}>
         <PerformanceBarChart
           data={sortedByMulti}
           dataKey="multi_core"
           color="#5856D6"
-          name={String(t('charts.multiCore'))}
-          showProcessor={showProcessor}
+          name="多核性能"
+          showProcessor={true}
+          baselineProcessor="Apple M2 @ 3.5 GHz (8 CPU cores, 10 GPU cores)"
         />
       </ChartContainer>
     </div>
