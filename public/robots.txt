@@ -1,14 +1,6 @@
+# 允许所有搜索引擎爬虫
 User-agent: *
 Allow: /
 
-# Optimize crawling
-Crawl-delay: 1
-
-# Sitemap
-Sitemap: https://mac-processor-ranking.com/sitemap.xml
-
-# Block specific paths
-Disallow: /admin
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
+# 站点地图
+Sitemap: https://applepk.top/sitemap.xml
