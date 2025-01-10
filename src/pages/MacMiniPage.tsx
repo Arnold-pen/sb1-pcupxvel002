@@ -7,6 +7,8 @@ export default function MacMiniPage() {
   const { t } = useTranslation();
   const { products, loading, error } = useProducts('mac_mini');
 
+  const pageTitle = t('titles.macMini');
+
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">
       <p className="text-xl text-gray-600 dark:text-gray-400">{t('common.loading')}</p>
@@ -22,13 +24,13 @@ export default function MacMiniPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
       <Helmet>
-        <title>Mac mini & Studio 性能排名 | M1/M2/M3 性能对比</title>
+        <title>{pageTitle}</title>
         <meta name="description" content="最新 Mac mini 与 Mac Studio 性能排名，包括搭载 M1/M2/M3 系列芯片的产品单核和多核跑分数据对比" />
         <meta name="keywords" content="Mac mini,Mac Studio,性能排名,M1,M2,M3,性能对比,单核性能,多核性能" />
-        <link rel="canonical" href="https://mac-processor-ranking.com/mac-mini" />
-        <meta property="og:title" content="Mac mini & Studio 性能排名 | M1/M2/M3 性能对比" />
+        <link rel="canonical" href="https://applepk.top/mac-mini" />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content="最新 Mac mini 与 Mac Studio 性能排名，包括搭载 M1/M2/M3 系列芯片的产品单核和多核跑分数据对比" />
-        <meta property="og:url" content="https://mac-processor-ranking.com/mac-mini" />
+        <meta property="og:url" content="https://applepk.top/mac-mini" />
       </Helmet>
 
       <section className="relative h-[30vh] flex items-center justify-center bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors">

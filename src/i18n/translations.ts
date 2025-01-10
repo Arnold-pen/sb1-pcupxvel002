@@ -20,7 +20,8 @@ export const translations = {
       macbookPro: 'MacBook Pro Performance Rankings',
       macbookAir: 'MacBook Air Performance Rankings',
       macMini: 'Mac mini & Studio Performance Rankings',
-      iMac: 'Mac Pro & iMac Performance Rankings'
+      iMac: 'Mac Pro & iMac Performance Rankings',
+      about: 'About Mac Processor Rankings | Website Introduction'
     },
     charts: {
       singleCore: 'Single-Core Performance (Baseline: Apple M3)',
@@ -95,6 +96,9 @@ export const translations = {
         title: 'Contact & Feedback',
         content: 'We value feedback and suggestions from every user. If you have any questions, suggestions, or find any data errors, please feel free to contact us through:'
       }
+    },
+    descriptions: {
+      about: 'Mac Processor Rankings provides comprehensive performance comparisons of Apple Silicon M1/M2/M3/M4 series processors.'
     }
   },
   zh: {
@@ -118,7 +122,8 @@ export const translations = {
       macbookPro: 'MacBook Pro 性能排名',
       macbookAir: 'MacBook Air 性能排名',
       macMini: 'Mac mini & Studio 性能排名',
-      iMac: 'Mac Pro & iMac 性能排名'
+      iMac: 'Mac Pro & iMac 性能排名',
+      about: '关于 Mac 处理器性能排名 | 网站介绍'
     },
     charts: {
       singleCore: '单核性能 (基准：Apple M3)',
@@ -193,6 +198,9 @@ export const translations = {
         title: '联系与反馈',
         content: '我们重视每一位用户的反馈和建议。如果您有任何问题、建议或发现数据有误，欢迎通过以下方式联系我们：'
       }
+    },
+    descriptions: {
+      about: 'Mac 处理器性能排名网站提供最新、最全面的 Apple Silicon M1/M2/M3/M4 系列处理器性能数据对比。'
     }
   }
 };

@@ -8,6 +8,8 @@ export default function IMacPage() {
   const { t } = useTranslation();
   const { products, loading, error } = useProducts('imac');
 
+  const pageTitle = t('titles.iMac');
+
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">
       <p className="text-xl text-gray-600 dark:text-gray-400">{t('common.loading')}</p>
@@ -23,13 +25,13 @@ export default function IMacPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
       <Helmet>
-        <title>iMac & Mac Pro 性能排名 | M1/M2/M3 性能对比</title>
+        <title>{pageTitle}</title>
         <meta name="description" content="最新 iMac 与 Mac Pro 性能排名，包括搭载 M1/M2/M3 系列芯片的产品单核和多核跑分数据对比" />
         <meta name="keywords" content="iMac,Mac Pro,性能排名,M1,M2,M3,性能对比,单核性能,多核性能" />
-        <link rel="canonical" href="https://mac-processor-ranking.com/imac" />
-        <meta property="og:title" content="iMac & Mac Pro 性能排名 | M1/M2/M3 性能对比" />
+        <link rel="canonical" href="https://applepk.top/imac" />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content="最新 iMac 与 Mac Pro 性能排名，包括搭载 M1/M2/M3 系列芯片的产品单核和多核跑分数据对比" />
-        <meta property="og:url" content="https://mac-processor-ranking.com/imac" />
+        <meta property="og:url" content="https://applepk.top/imac" />
       </Helmet>
 
       <section className="relative h-[30vh] flex items-center justify-center bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors">

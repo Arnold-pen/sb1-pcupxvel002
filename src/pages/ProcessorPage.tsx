@@ -8,6 +8,8 @@ export default function ProcessorPage() {
   const { t } = useTranslation();
   const { products, loading, error } = useProducts('processors');
 
+  const pageTitle = t('titles.processors');
+
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">
       <p className="text-xl text-gray-600 dark:text-gray-400">{t('common.loading')}</p>
@@ -28,9 +30,13 @@ export default function ProcessorPage() {
       transition={{ duration: 0.5 }}
     >
       <Helmet>
-        <title>Mac 处理器性能排名 | Apple Silicon M1/M2/M3 性能对比</title>
+        <title>{pageTitle}</title>
         <meta name="description" content="最新 Mac 处理器性能排名，包括 M1/M2/M3 系列处理器的单核和多核跑分数据对比" />
         <meta name="keywords" content="Mac处理器,M1,M2,M3,性能排名,单核性能,多核性能,Apple Silicon" />
+        <link rel="canonical" href="https://applepk.top/processors" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content="最新 Mac 处理器性能排名，包括 M1/M2/M3 系列处理器的单核和多核跑分数据对比" />
+        <meta property="og:url" content="https://applepk.top/processors" />
       </Helmet>
 
       <section className="relative h-[30vh] flex items-center justify-center bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors">

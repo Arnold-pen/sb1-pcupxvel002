@@ -8,6 +8,8 @@ export default function MacBookAirPage() {
   const { t } = useTranslation();
   const { products, loading, error } = useProducts('macbook_air');
 
+  const pageTitle = t('titles.macbookAir');
+
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">
       <p className="text-xl text-gray-600 dark:text-gray-400">{t('common.loading')}</p>
@@ -23,13 +25,13 @@ export default function MacBookAirPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
       <Helmet>
-        <title>MacBook Air 性能排名 | M1/M2/M3 性能对比</title>
+        <title>{pageTitle}</title>
         <meta name="description" content="最新 MacBook Air 性能排名，包括搭载 M1/M2/M3 系列芯片的 MacBook Air 单核和多核跑分数据对比" />
         <meta name="keywords" content="MacBook Air,性能排名,M1,M2,M3,性能对比,单核性能,多核性能" />
-        <link rel="canonical" href="https://mac-processor-ranking.com/macbook-air" />
-        <meta property="og:title" content="MacBook Air 性能排名 | M1/M2/M3 性能对比" />
+        <link rel="canonical" href="https://applepk.top/macbook-air" />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content="最新 MacBook Air 性能排名，包括搭载 M1/M2/M3 系列芯片的 MacBook Air 单核和多核跑分数据对比" />
-        <meta property="og:url" content="https://mac-processor-ranking.com/macbook-air" />
+        <meta property="og:url" content="https://applepk.top/macbook-air" />
       </Helmet>
 
       <section className="relative h-[30vh] flex items-center justify-center bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors">
