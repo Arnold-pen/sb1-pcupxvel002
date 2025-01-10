@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useProducts } from '../hooks/useProducts';
 import { useTranslation } from '../hooks/useTranslation';
-import MacMiniCharts from '../components/charts/MacMiniCharts';
+import ProductCharts from '../components/charts/ProductCharts';
 
 export default function MacMiniPage() {
   const { t } = useTranslation();
@@ -43,11 +43,11 @@ export default function MacMiniPage() {
       </section>
       
       <div className="max-w-[90rem] mx-auto px-4 py-8">
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors">
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
           <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 text-center mb-8">
             {t('common.performanceComparison')}
           </h2>
-          <MacMiniCharts products={products} />
+          <ProductCharts products={products} />
         </section>
       </div>
     </main>

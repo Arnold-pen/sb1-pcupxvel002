@@ -32,7 +32,7 @@ export default function ProductCharts({ products, showProcessor = true }: Produc
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-      <ChartContainer title={String(t('charts.singleCore'))}>
+      <ChartContainer title={String(t(products[0]?.category === 'mac_mini' ? 'charts.macMiniSingleCore' : 'charts.singleCore'))}>
         <PerformanceBarChart
           data={sortedBySingle}
           dataKey="single_core"
@@ -42,7 +42,7 @@ export default function ProductCharts({ products, showProcessor = true }: Produc
         />
       </ChartContainer>
 
-      <ChartContainer title={String(t('charts.multiCore'))} delay={0.2}>
+      <ChartContainer title={String(t(products[0]?.category === 'mac_mini' ? 'charts.macMiniMultiCore' : 'charts.multiCore'))} delay={0.2}>
         <PerformanceBarChart
           data={sortedByMulti}
           dataKey="multi_core"

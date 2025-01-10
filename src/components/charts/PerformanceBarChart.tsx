@@ -86,7 +86,12 @@ export default function PerformanceBarChart({
             tick={{ 
               fontSize: 12,
               fill: '#374151',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              style: {
+                whiteSpace: 'nowrap',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden'
+              }
             }}
             axisLine={false}
             tickLine={false}
